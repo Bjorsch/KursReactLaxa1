@@ -1,23 +1,18 @@
 import './App.css';
-import React, { useState } from 'react';
 
-const data = require('./data/pets.json');
-
-function PetsItem () {
-
-    const [pets, setPets] = useState(data)
+const PetsItem = (props) =>  {
 
     const removePets = (idToRemove) => {
-        const updateArray = pets.filter((pet) => {
+        const updateArray = props.pets.filter((pet) => {
             return pet.id !== idToRemove;
         });
-        setPets(updateArray);
+        props.setPets(updateArray);
     };
 
     return(
         <>
             <ul>
-                {pets.map((pet, index) => (
+                {props.pets.map((pet, index) => (
                     <li key={index}>
                         <h1>Name: {pet.name}</h1>
                             <h2>Id: {pet.id}</h2>
