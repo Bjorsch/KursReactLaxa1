@@ -1,13 +1,18 @@
 import './App.css';
 import PetsItem from './PetsItem';
+import React, { useState } from 'react';
 
+const data = require('./data/pets.json');
 
 function Pets() {
+
+    const [pets, setPets] = useState(data)
+
     return (
         <>
             <div>
                 <h1>Oh! Hello Pets</h1>
-                <PetsItem/>
+                <PetsItem pets={pets} setPets={setPets}/>
             </div>
         </>
     ) 
