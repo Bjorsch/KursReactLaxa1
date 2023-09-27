@@ -21,7 +21,7 @@ function PetsItem () {
                     <li key={index}>
                         <h1>Name: {pet.name}</h1>
                             <h2>Id: {pet.id}</h2>
-                            <img src={pet.url} style={{width:500, height: 500}} alt={'Photo of ' + pet.name}></img>
+                            <img src={pet.url} style={{width:600, height: 600}} alt={'Photo of ' + pet.name}></img>
                             <button onClick={() => removePets(pet.id)}>Remove cat</button>
                     </li>
                 ))}
